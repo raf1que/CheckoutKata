@@ -74,6 +74,19 @@ namespace CheckoutKata
             Assert.AreEqual(expected, _checkout.GetTotalPrice());
         }
 
+        [TestMethod]
+        public void GivenItemA_Return50_dummy()
+        {
 
+            //arrange
+            var item = "A";
+            var expected = 50;
+
+            //act
+            _checkout.Scan(item);
+
+            //assert
+            Assert.AreEqual(expected, _checkout.GetTotalPrice(true));
+        }
     }
 }

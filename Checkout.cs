@@ -1,4 +1,8 @@
-﻿namespace CheckoutKata
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net.Sockets;
+
+namespace CheckoutKata
 {
     public class Checkout :ICheckout
     {
@@ -31,6 +35,23 @@
                     break;
             }
             return _total;
+        }
+
+        public int GetTotalPrice(bool dummy)
+        {
+            var priceList = new List<Prices>()
+            {
+                new Prices(){Item = "A", Price = 50},
+                new Prices(){Item = "A", Price = 30},
+                new Prices(){Item = "A", Price = 20},
+                new Prices(){Item = "A", Price = 15}
+            };
+
+
+            var itemResult = priceList.Where(x => x.Item.Equals(_item)).Select(x => x.Price).FirstOrDefault();
+
+            return itemResult;
+
         }
     }
 }

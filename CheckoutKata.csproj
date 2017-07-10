@@ -51,6 +51,7 @@
     <Compile Include="Checkout.cs" />
     <Compile Include="ICheckout.cs" />
     <Compile Include="CheckoutTests.cs" />
+    <Compile Include="Prices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
