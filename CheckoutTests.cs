@@ -100,5 +100,23 @@ namespace CheckoutKata
             Assert.AreEqual(expected, _checkout.GetTotalPrice());
         }
 
+
+        [TestMethod]
+        public void GivenTwoItemB_And_ThreeItemA_Return175()  //additional to requirements, a combinational test for discount by 15 for 2Bs and 20 for 3As
+        {
+            //arrange;
+            var expected = 175;
+
+            //act
+            _checkout.Scan("B");
+            _checkout.Scan("B");
+            _checkout.Scan("A");
+            _checkout.Scan("A");
+            _checkout.Scan("A");
+
+            //assert
+            Assert.AreEqual(expected, _checkout.GetTotalPrice());
+        }
+
     }
 }
