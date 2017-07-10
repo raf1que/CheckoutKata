@@ -9,8 +9,15 @@ namespace CheckoutKata
         [TestMethod]
         public void TestMethod1()
         {
+
+            //arrange
+
+            //act
+            var checkout = new Checkout();
+            checkout.Scan("A");
+
             //assert
-            Assert.AreEqual(50,50);
+            Assert.AreEqual(50,checkout.GetTotalPrice());
         }
     }
 }
