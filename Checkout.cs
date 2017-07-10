@@ -22,35 +22,11 @@ namespace CheckoutKata
             _item = item;
         }
 
-        //public int GetTotalPrice()
-        //{
-        //    switch (_item)
-        //    {
-        //        case "A":
-        //            _total = 50;
-        //            break;
-        //        case "B":
-        //            _total = 30;
-        //            break;
-        //        case "C":
-        //            _total = 20;
-        //            break;
-        //        case "D":
-        //            _total = 15;
-        //            break;
-        //        default:
-        //            _total = 0;
-        //            break;
-        //    }
-        //    return _total;
-        //}
-
         public int GetTotalPrice()
         {
             _total = _priceList.Where(x => x.Item.Equals(_item)).Select(x => x.Price).FirstOrDefault();
 
             return _total;
-
         }
     }
 }
