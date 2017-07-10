@@ -3,6 +3,7 @@
     public class Checkout :ICheckout
     {
         private string _item;
+        private int _total;
 
         public void Scan(string item)
         {
@@ -14,16 +15,22 @@
             switch (_item)
             {
                 case "A":
-                    return 50;
+                    _total = 50;
+                    break;
                 case "B":
-                    return 30;
+                    _total = 30;
+                    break;
                 case "C":
-                    return 20;
+                    _total = 20;
+                    break;
                 case "D":
-                    return 15;
+                    _total = 15;
+                    break;
                 default:
-                    return 0;
+                    _total = 0;
+                    break;
             }
+            return _total;
         }
     }
 }
