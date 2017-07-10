@@ -17,16 +17,35 @@ namespace CheckoutKata
             new Prices(){Item = "D", Price = 15}
         };
 
+        private List<string> _basket = new List<string>();
+        private int _discount
+            ;
+
         public void Scan(string item)
         {
+
+            _basket.Add(item);
+
             _item = item;
         }
 
         public int GetTotalPrice()
         {
-            _total = _priceList.Where(x => x.Item.Equals(_item)).Select(x => x.Price).FirstOrDefault();
+            foreach (var item in _basket)
+            {
+                _total += _priceList.Where(x => x.Item.Equals(_item)).Select(x => x.Price).FirstOrDefault();
+            }
 
-            return _total;
+            _discount = 0;
+
+            if (_basket.Count.Equals(3) && _item.Equals("A"))
+            {
+                _discount = -20;
+            }
+
+            return _total + _discount;
+
+
         }
     }
 }
