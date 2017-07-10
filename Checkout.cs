@@ -14,6 +14,9 @@
             if (_item.Equals("B"))
                 return 30;
 
+            if (_item.Equals("C"))
+                return 20;
+
             return 50;
         }
     }
