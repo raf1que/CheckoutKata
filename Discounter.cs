@@ -11,14 +11,14 @@ namespace CheckoutKata
             _basket = basket;
         }
 
-        public int CalculateDiscount(string item)
+        public int CalculateDiscount()
         {
-            if (_basket.Count.Equals(3) && item.Equals("A"))
+            if (_basket.Count.Equals(3) && _basket.Contains("A"))
             {
                 return -20;
             }
 
-            if (_basket.Count.Equals(2) && item.Equals("B"))
+            if (_basket.Count.Equals(2) && _basket.Contains("B"))
             {
                 return -15;
             }

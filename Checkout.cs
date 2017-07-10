@@ -6,7 +6,7 @@ namespace CheckoutKata
 {
     public class Checkout :ICheckout
     {
-        private string _item;
+        
         private int _total;
 
         private List<Prices> _priceList = new List<Prices>()
@@ -25,20 +25,18 @@ namespace CheckoutKata
         {
 
             _basket.Add(item);
-
-            _item = item;
         }
 
         public int GetTotalPrice()
         {
-            foreach (var item in _basket)
-            {
-                _total += _priceList.Where(x => x.Item.Equals(_item)).Select(x => x.Price).FirstOrDefault();
-            }
-
             _discount = 0;
 
-            _discount = new Discounter(_basket).CalculateDiscount(_item);
+            foreach (var item in _basket)
+            {
+                _total += _priceList.FirstOrDefault(x => x.Item.Equals(item)).Price;
+            }
+            
+            _discount = new Discounter(_basket).CalculateDiscount();
 
             return _total + _discount;
         }
