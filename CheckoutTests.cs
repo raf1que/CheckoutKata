@@ -70,5 +70,21 @@ namespace CheckoutKata
             Assert.AreEqual(expected, _checkout.GetTotalPrice());
         }
 
+        [TestMethod]
+        public void GivenThreeItemA_Return130()  //discount by 20
+        {
+            //arrange
+            var item = "A";
+            var expected = 130;
+
+            //act
+            _checkout.Scan(item);
+            _checkout.Scan(item);
+            _checkout.Scan(item);
+
+            //assert
+            Assert.AreEqual(expected, _checkout.GetTotalPrice());
+        }
+
     }
 }
