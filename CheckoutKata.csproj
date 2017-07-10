@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Checkout.cs" />
     <Compile Include="Discounter.cs" />
+    <Compile Include="DiscountRule.cs" />
     <Compile Include="ICheckout.cs" />
     <Compile Include="CheckoutTests.cs" />
     <Compile Include="Prices.cs" />

@@ -5,6 +5,14 @@ namespace CheckoutKata
     public class Discounter
     {
         private List<string> _basket;
+        private int _discount;
+
+        //TODO: load from a repo / pass in via contructor
+        private static readonly List<DiscountRule> DiscountRules = new List<DiscountRule>()
+        {
+            new DiscountRule("A", 3, -20),
+            new DiscountRule("B", 2, -15)
+        };
 
         public Discounter(List<string> basket)
         {
@@ -13,17 +21,12 @@ namespace CheckoutKata
 
         public int CalculateDiscount()
         {
-            if (_basket.Count.Equals(3) && _basket.Contains("A"))
+            foreach (var rule in DiscountRules)
             {
-                return -20;
+                _discount += rule.SelectDiscount(_basket);
             }
 
-            if (_basket.Count.Equals(2) && _basket.Contains("B"))
-            {
-                return -15;
-            }
-
-            return 0;
+            return _discount;
         }
     }
 }
