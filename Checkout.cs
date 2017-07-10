@@ -19,6 +19,8 @@
                     return 30;
                 case "C":
                     return 20;
+                case "D":
+                    return 15;
                 default:
                     return 0;
             }
