@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CheckoutKata
 {
     [TestClass]
-    public class UnitTest1
+    public class CheckoutTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GivenItemA_Return50()
         {
 
             //arrange
