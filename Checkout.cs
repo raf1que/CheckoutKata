@@ -11,13 +11,17 @@
 
         public int GetTotalPrice()
         {
-            if (_item.Equals("B"))
-                return 30;
-
-            if (_item.Equals("C"))
-                return 20;
-
-            return 50;
+            switch (_item)
+            {
+                case "A":
+                    return 50;
+                case "B":
+                    return 30;
+                case "C":
+                    return 20;
+                default:
+                    return 0;
+            }
         }
     }
 }
