@@ -4,7 +4,7 @@ namespace CheckoutKata
 {
     public class Discounter
     {
-        private List<string> _basket;
+        private readonly List<string> _basket;
         private int _discount;
 
         //TODO: load from a repo / pass in via contructor
