@@ -17,6 +17,12 @@ namespace CheckoutKata
             {
                 return -20;
             }
+
+            if (_basket.Count.Equals(2) && item.Equals("B"))
+            {
+                return -15;
+            }
+
             return 0;
         }
     }
