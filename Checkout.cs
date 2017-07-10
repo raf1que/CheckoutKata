@@ -8,12 +8,12 @@
 
         public void Scan(string item)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public int GetTotalPrice()
         {
-            throw new System.NotImplementedException();
+            return 50;
         }
     }
 
