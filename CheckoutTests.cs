@@ -6,18 +6,27 @@ namespace CheckoutKata
     [TestClass]
     public class CheckoutTests
     {
+        private Checkout _checkout;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _checkout = new Checkout();
+        }
+
         [TestMethod]
         public void GivenItemA_Return50()
         {
 
             //arrange
+            var item = "A";
+            var expected = 50;
 
             //act
-            var checkout = new Checkout();
-            checkout.Scan("A");
+            _checkout.Scan(item);
 
             //assert
-            Assert.AreEqual(50,checkout.GetTotalPrice());
+            Assert.AreEqual(expected, _checkout.GetTotalPrice());
         }
 
         [TestMethod]
@@ -25,13 +34,14 @@ namespace CheckoutKata
         {
 
             //arrange
+            var item = "B";
+            var expected = 30;
 
             //act
-            var checkout = new Checkout();
-            checkout.Scan("B");
+            _checkout.Scan(item);
 
             //assert
-            Assert.AreEqual(30, checkout.GetTotalPrice());
+            Assert.AreEqual(expected, _checkout.GetTotalPrice());
         }
     }
 }

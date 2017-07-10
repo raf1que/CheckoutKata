@@ -12,9 +12,8 @@
         public int GetTotalPrice()
         {
             if (_item.Equals("B"))
-            {
                 return 30;
-            }
+
             return 50;
         }
     }
